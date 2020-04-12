@@ -1,0 +1,11 @@
+<div *ngIf="items?.length > 0;else noItems ">
+<ul *ngFor="let item of items" class="collection">
+<li  class="collection-item"><strong>{{ item.title }}: </strong>{{ item.description }} <button (click)="deleteItem($event, item)" class="btn">Delete</button>
+</li>
+</ul>
+</div> 
+
+<ng-template #noItems>
+    <hr>
+<h5>there are no items to list</h5>
+</ng-template>
